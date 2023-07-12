@@ -1,29 +1,33 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract gasChallenge {
-    //Implement Fixed-Size Array Technique Here
-    uint[] numbers = [1,2,3,4,5,6,7,8,9,10];
+contract GasChallenge {
+    uint256[10] private numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     
-    //Function to check for sum of array
-    //No changes required in this function
+    // Function to check the sum of the array
+    // No changes required in this function
     function getSumOfArray() public view returns (uint256) {
-        uint sum = 0;
-        for (uint i = 0; i < numbers.length; i++) {
+        uint256 sum = 0;
+        for (uint256 i = 0; i < numbers.length; i++) {
             sum += numbers[i];
         }
         return sum;
     }
     
     function notOptimizedFunction() public {
-        for (uint i = 0; i < numbers.length; i++) {
+        for (uint256 i = 0; i < numbers.length; i++) {
             numbers[i] = 0;
         }
     }
     
-    //Implement Remaining Gas Optimization Techniques Here
-    //Sum of elements in the numbers array should equal 0
+    // Implement the remaining gas optimization techniques here
+    // Sum of elements in the numbers array should equal 0
     function optimizedFunction() public {
-      
+        uint256 length = numbers.length;  // Caching state variable
+        unchecked {
+            for (uint256 i = 0; i < length; ++i) {  // Different for loop increment syntax
+                numbers[i] = 0;
+            }
+        }
     }
- }
+}
