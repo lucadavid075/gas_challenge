@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/workspaces/gas_challenge/contracts/gasChallenge.sol": {
-      "lastModificationDate": 1689136118025,
-      "contentHash": "545d891460b3366a5bccfe2d4e96fee7",
+      "lastModificationDate": 1689137052985,
+      "contentHash": "794b1be9f37e12ad9a3b40ced33bb1d2",
       "sourceName": "contracts/gasChallenge.sol",
       "solcConfig": {
         "version": "0.8.18",
