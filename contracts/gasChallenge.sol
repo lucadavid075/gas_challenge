@@ -21,6 +21,18 @@ contract GasChallenge {
     }
     
     // Implement the remaining gas optimization techniques here
+    // Technique 1: Fixed-Size Array Technique
+    // The numbers array has been changed from a dynamic array to a fixed-size array to optimize gas usage
+    
+    // Technique 2: Caching of State Variables
+    // The length of the numbers array is cached in the local variable length to minimize storage reads
+    
+    // Technique 3: Unchecked Block
+    // The unchecked block is used to skip the check for overflow during the loop execution
+    
+    // Technique 4: Different For Loop Increment Syntax
+    // The ++i increment syntax is used instead of i++ in the for loop
+    
     // Sum of elements in the numbers array should equal 0
     function optimizedFunction() public {
         uint256 length = numbers.length;  // Caching state variable
