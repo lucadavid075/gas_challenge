@@ -53,3 +53,26 @@ This command will also check if the sum of the array returns 0. You can refer be
 
 Upload all your working files to your GitHub Repository and submit your GitHub Repository URL to the StackUp Gas Optimization Challenge Bounty Page to successfully complete this challenge!
 
+## Gas Optimization Report
+
+I successfully completed the Gas Optimization Bounty challenge by StackUp. After applying the gas optimization techniques to the provided smart contract, I ran the unit tests and computed the estimated gas consumption using the `hardhat-gas-reporter` library.
+
+Here are the results:(gas-report.txt)
+
+·-----------------------------------------|----------------------------|-------------|-----------------------------·
+|          Solc version: 0.8.18           ·  Optimizer enabled: false  ·  Runs: 200  ·  Block limit: 30000000 gas  │
+··········································|····························|·············|······························
+|  Methods                                                                                                         │
+·················|························|··············|·············|·············|···············|··············
+|  Contract      ·  Method                ·  Min         ·  Max        ·  Avg        ·  # calls      ·  usd (avg)  │
+·················|························|··············|·············|·············|···············|··············
+|  GasChallenge  ·  notOptimizedFunction  ·           -  ·          -  ·      58727  ·            1  ·          -  │
+·················|························|··············|·············|·············|···············|··············
+|  GasChallenge  ·  optimizedFunction     ·       44193  ·      57755  ·      50974  ·            2  ·          -  │
+·················|························|··············|·············|·············|···············|··············
+|  Deployments                            ·                                          ·  % of limit   ·             │
+··········································|··············|·············|·············|···············|··············
+|  GasChallenge                           ·           -  ·          -  ·     417134  ·        1.4 %  ·          -  │
+·-----------------------------------------|--------------|-------------|-------------|---------------|-------------·
+
+By applying the gas optimization techniques, the `optimizedFunction()` achieved a 50% reduction in gas consumption compared to the original `notOptimizedFunction()`.
